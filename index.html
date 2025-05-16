@@ -1,210 +1,156 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>_.its__sham._</title>
-  
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday!</title>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Mohit!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
     body {
-      margin: 0;
-      padding: 0;
-      background: url('https://images.unsplash.com/photo-1600607689990-5f6f1c5f9cf9') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Comic Sans MS', cursive;
-      overflow-x: hidden;
-      color: #fff;
-    }
-
-    .card {
-      background: rgba(255, 192, 203, 0.9);
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-      max-width: 90%;
-      margin: 80px auto;
-      text-align: center;
-      animation: fadeIn 2s ease-in;
-      position: relative;
-      z-index: 10;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h1 {
-      font-size: 2rem;
-      text-shadow: 0 0 10px #ff1493;
-      margin-bottom: 10px;
-    }
-
-    a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      text-shadow: 0 0 5px #000;
-    }
-
-    p {
-      font-size: 1rem;
-      color: #fff;
-      margin: 15px 0;
-    }
-
-    .photos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin: 20px 0;
-    }
-
-    .photos img {
-      width: 130px;
-      height: 130px;
-      border-radius: 15px;
-      object-fit: cover;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      border: 3px solid #fff;
-    }
-
-    .btn {
-      background: #ff69b4;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #f9d423, #ff4e50);
+      overflow: hidden;
       color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1rem;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: transform 0.2s;
-      box-shadow: 0 0 10px #ff69b4;
     }
-
-    .btn:hover {
-      transform: scale(1.05);
+    .container {
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+      z-index: 2;
     }
-
-    .confetti {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      animation: fall 3s ease-in;
-      z-index: 1;
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 4rem;
+      color: #fff;
+      text-shadow: 0 0 20px #ff6b81, 0 0 40px #ff6b81;
+      animation: glow 2s ease-in-out infinite alternate;
     }
-
-    @keyframes fall {
-      0% { top: -10px; opacity: 1; }
-      100% { top: 100vh; opacity: 0; }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff; }
+      to { text-shadow: 0 0 30px #fff, 0 0 60px #ff4e50; }
     }
-
+    .gallery {
+      margin-top: 3rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: floatImages 6s ease-in-out infinite;
+    }
+    .gallery img {
+      width: 200px;
+      height: 250px;
+      border-radius: 20px;
+      object-fit: cover;
+      transition: transform 0.4s ease, box-shadow 0.4s;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    .gallery img:hover {
+      transform: scale(1.1) rotate(3deg);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    @keyframes floatImages {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .message {
+      margin-top: 3rem;
+      font-size: 1.5rem;
+      max-width: 90vw;
+      white-space: pre-line;
+      border-right: 3px solid white;
+      overflow: hidden;
+      animation: type 10s steps(120) 1 forwards, fadeIn 2s ease-in-out;
+    }
+    @keyframes type {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .insta-link, .credit {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      background: #fff;
+      color: #ff4e50;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .insta-link:hover, .credit:hover {
+      background: #ff4e50;
+      color: #fff;
+    }
     .balloon {
       position: absolute;
-      width: 35px;
-      height: 50px;
-      background: radial-gradient(circle, #ff69b4, #ff1493);
-      border-radius: 50%;
-      animation: float 8s linear infinite;
+      width: 50px;
+      height: 70px;
+      background: radial-gradient(circle at 30% 30%, #fff, #ff6b81);
+      border-radius: 50% 50% 45% 45%;
+      animation: float 4s ease-in-out infinite;
       z-index: 0;
     }
-
+    .balloon::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background: #fff;
+      transform: translateX(-50%);
+    }
     @keyframes float {
-      0% { transform: translateY(100vh); }
-      100% { transform: translateY(-120vh); }
-    }
-
-    audio {
-      display: none;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 0.9rem;
-      color: #fff;
-      text-shadow: 0 0 5px #000;
-    }
-
-    footer a {
-      color: #ffd700;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    @media (max-width: 500px) {
-      h1 {
-        font-size: 1.5rem;
-      }
-      .photos img {
-        width: 100px;
-        height: 100px;
-      }
-      .btn {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-      }
+      0% { transform: translateY(0); opacity: 1; }
+      50% { transform: translateY(-30px); opacity: 0.8; }
+      100% { transform: translateY(0); opacity: 1; }
     }
   </style>
 </head>
 <body>
 
-  <div class="card">
-    <h1>Happy Birthday, <a href="https://www.instagram.com/_.its__sham._?igsh=MWc3NHA4aWU4OGp2aA==" target="_blank">_.its__sham._</a>!</h1>
-    <p>Wishing you joy, sparkle, and all the magic your heart desires!</p>
-
-    <div class="photos">
-      <img src="photo.jpg" alt="Photo 1">
-      <img src="photo2.jpg" alt="Photo 2">
+  <div class="container">
+    <h1>Happy Birthday Mohit!</h1>
+    <div class="gallery">
+      <img src="p1.jpg" alt="Mohit 1">
+      <img src="p2.jpg" alt="Mohit 2">
+      
     </div>
 
-    <button class="btn" onclick="launchConfetti()">Celebrate</button>
+    <div class="message" id="wishMsg">
+Wishing you a day filled with laughter and memories,  
+A year full of adventures and victories,  
+A heart glowing brighter than the stars above,  
+Because you, Mohit, deserve all the love.  
+— From SpiderXLab  
+    </div>
+
+    <a class="insta-link" href="https://www.instagram.com/mohittpatell._?igsh=amNhdmNyNWF4bWU1" target="_blank">
+      Follow @mohittpatell._
+    </a><br>
+    <a class="credit" href="https://spiderxlab.github.io/.in/" target="_blank">
+      Wish by SpiderXLab
+    </a>
   </div>
-
-  <footer>
-    Crafted with love by 
-    <a href="https://spiderxlab.github.io/.in/" target="_blank">SpiderXLab</a>
-  </footer>
-
-  <audio autoplay loop>
+<audio autoplay loop>
     <source src="music.mp3" type="audio/mp3">
-  </audio>
-
+</audio>
   <script>
-    function launchConfetti() {
-      for (let i = 0; i < 100; i++) {
-        let confetti = document.createElement('div');
-        confetti.classList.add('confetti');
-        confetti.style.left = Math.random() * 100 + 'vw';
-        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
-        confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
-        document.body.appendChild(confetti);
-        setTimeout(() => confetti.remove(), 5000);
-      }
-    }
-
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 20; i++) {
       const balloon = document.createElement('div');
       balloon.className = 'balloon';
       balloon.style.left = Math.random() * 100 + 'vw';
-      balloon.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      balloon.style.animationDuration = (3 + Math.random() * 4) + 's';
+      balloon.style.top = Math.random() * 80 + 'vh';
       document.body.appendChild(balloon);
     }
   </script>
 
-</body>
-</html>
-<!-- partial -->
-  
 </body>
 </html>
